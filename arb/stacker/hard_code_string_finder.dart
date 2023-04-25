@@ -29,11 +29,11 @@ class HardCodedStringFinder {
       print("\n");
       print(
           'String cannot be replacement. Probably contains some variable. Probably must to be done by hand'
-              .colorizeMessage(StrackerColor.red, emoji: '👽'));
+              .colorizeMessage(PrinterStringColor.red, emoji: '👽'));
       print('String was: $it\n'
-          .colorizeMessage(StrackerColor.red, emoji: '    '));
+          .colorizeMessage(PrinterStringColor.red, emoji: '    '));
       print('Check the string on: $path'
-          .colorizeMessage(StrackerColor.red, emoji: '    '));
+          .colorizeMessage(PrinterStringColor.red, emoji: '    '));
       print("\n");
       return false;
     }

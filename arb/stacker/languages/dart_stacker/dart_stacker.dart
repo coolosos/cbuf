@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:path/path.dart' as path;
 
-import '../../extensions/extensions.dart';
+import '../../../../utilities/extension.dart';
 import '../../stracker.dart';
 import '../language_stracker.dart';
 import '../language_helper.dart';
@@ -48,9 +48,9 @@ class DartStacker extends LanguageStracker with StrackerHelper {
           numberOfChanges: 0,
         );
       }
-      print("$file".colorizeMessage(StrackerColor.cyan, emoji: '✅'));
+      print("$file".colorizeMessage(PrinterStringColor.cyan, emoji: '✅'));
       print("String to change: $stringsFounded"
-          .colorizeMessage(StrackerColor.cyan, emoji: '   '));
+          .colorizeMessage(PrinterStringColor.cyan, emoji: '   '));
       if (!fileContent.contains('l10n')) {
         fileContent = "$importString\n$fileContent";
       }

@@ -1,20 +1,16 @@
-
 library stracker;
-
 
 import 'dart:convert';
 import 'dart:io';
 
-
 import 'package:path/path.dart' as path;
 
-import 'extensions/extensions.dart';
+import '../../utilities/extension.dart';
+
 import 'languages/dart_stacker/dart_stacker.dart';
 import 'languages/language_stracker.dart';
 
-
 part 'hard_code_string_finder.dart';
-
 
 class Stracker {
   final List<String> skips;
@@ -77,7 +73,7 @@ class Stracker {
   void printResults() {
     print(
       'Dart string extract to arb: ${_dartExtractions.numberOfChanges} '
-          .colorizeMessage(StrackerColor.green, emoji: '🚀'),
+          .colorizeMessage(PrinterStringColor.green, emoji: '🚀'),
     );
   }
 
@@ -88,7 +84,7 @@ class Stracker {
     ];
     print(directory
         .toString()
-        .colorizeMessage(StrackerColor.yellow, emoji: '📂'));
+        .colorizeMessage(PrinterStringColor.yellow, emoji: '📂'));
 
     for (FileSystemEntity element in directory.listSync()) {
       final bool shouldSkip = skips.contains(path.basename(element.path));

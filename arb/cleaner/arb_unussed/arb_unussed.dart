@@ -2,9 +2,9 @@ import 'dart:io';
 
 import '../arb_reader.dart';
 
-import '../directory_management.dart';
-import '../extension.dart';
-import '../printer_helper.dart';
+import '../../../utilities/directory_management.dart';
+import '../../../utilities/extension.dart';
+import '../../../utilities/printer_helper.dart';
 
 class ArbUnUssed with ArbReader, DirectoryManagement, PrinterHelper {
   ArbUnUssed({
@@ -34,17 +34,18 @@ class ArbUnUssed with ArbReader, DirectoryManagement, PrinterHelper {
 
     if (arbKeys.isEmpty) {
       print('All key will be in use'
-          .colorizeMessage(ArbStringColor.green, emoji: '✅'));
+          .colorizeMessage(PrinterStringColor.green, emoji: '✅'));
       return null;
     }
 
     print("${arbKeys.length} wasn't in use"
-        .colorizeMessage(ArbStringColor.yellow, emoji: '📂'));
+        .colorizeMessage(PrinterStringColor.yellow, emoji: '📂'));
 
     print("Key where $arbKeys"
-        .colorizeMessage(ArbStringColor.white, emoji: '     '));
+        .colorizeMessage(PrinterStringColor.white, emoji: '     '));
 
-    print('Deleting keys'.colorizeMessage(ArbStringColor.cyan, emoji: '🚑'));
+    print(
+        'Deleting keys'.colorizeMessage(PrinterStringColor.cyan, emoji: '🚑'));
 
     for (String keyToDelete in arbKeys) {
       arbFormatted.removeWhere((key, value) => key == keyToDelete);

@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import '../arb_reader.dart';
-import '../directory_management.dart';
-import '../printer_helper.dart';
+import '../../../utilities/directory_management.dart';
+import '../../../utilities/printer_helper.dart';
 import 'arb_duplicate_helper.dart';
-import '../extension.dart';
+import '../../../utilities/extension.dart';
 
 class ArbDuplicate
     with ArbDuplicateHelper, ArbReader, DirectoryManagement, PrinterHelper {
@@ -36,10 +36,10 @@ class ArbDuplicate
     }
 
     print('Remove ${duplicateValue.length} duplicate values'
-        .colorizeMessage(ArbStringColor.cyan, emoji: '🚑'));
+        .colorizeMessage(PrinterStringColor.cyan, emoji: '🚑'));
     formattedArb.removeWhere((key, value) => duplicateValue.contains(value));
 
-    print('Added Shared'.colorizeMessage(ArbStringColor.blue, emoji: '🧠'));
+    print('Added Shared'.colorizeMessage(PrinterStringColor.blue, emoji: '🧠'));
     for (var value in duplicateValue.toSet().toList()) {
       final String arbNamed = arbKey(value);
       formattedArb.addAll({'shared_$arbNamed': value});

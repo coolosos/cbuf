@@ -4,11 +4,11 @@ import 'dart:io';
 
 import 'package:args/args.dart';
 
-import '../arb__cleaner/directory_management.dart';
+import '../../utilities/directory_management.dart';
 import 'package:path/path.dart' as path;
 
-import '../arb__cleaner/printer_helper.dart';
-import '../arb_stacker/extensions/extensions.dart';
+import '../../utilities/extension.dart';
+import '../../utilities/printer_helper.dart';
 
 part 'assets_arguments.dart';
 
@@ -35,11 +35,11 @@ class AssetsCleaner with DirectoryManagement, PrinterHelper {
     _read_all_directory(newDirectory: projectDirectory);
     if (assetKey.isNotEmpty) {
       print('Total assets to remove: ${assetKey.length}'
-          .colorizeMessage(StrackerColor.blue, emoji: '🚑'));
+          .colorizeMessage(PrinterStringColor.blue, emoji: '🚑'));
       print(assetKey);
     } else {
       print('No assets to remove'
-          .colorizeMessage(StrackerColor.green, emoji: '✅'));
+          .colorizeMessage(PrinterStringColor.green, emoji: '✅'));
     }
     bottomDivider();
   }

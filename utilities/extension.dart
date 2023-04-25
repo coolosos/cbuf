@@ -1,12 +1,12 @@
 extension Formatter on String {
   colorizeMessage(
-    ArbStringColor color, {
+    PrinterStringColor color, {
     required String emoji,
   }) =>
-      "$emoji ${color.color}$this${ArbStringColor.reset.color}";
+      "$emoji ${color.color}$this${PrinterStringColor.reset.color}";
 }
 
-enum ArbStringColor {
+enum PrinterStringColor {
   reset(color: '\x1B[0m'),
   black(color: '\x1B[30m'),
   red(color: '\x1B[31m'),
@@ -18,7 +18,7 @@ enum ArbStringColor {
   white(color: '\x1B[37m'),
   ;
 
-  const ArbStringColor({required this.color});
+  const PrinterStringColor({required this.color});
 
   final String color;
 }

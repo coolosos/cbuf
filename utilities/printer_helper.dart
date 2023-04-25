@@ -4,7 +4,7 @@ mixin PrinterHelper {
   void title(String title) {
     print(title
         .toUpperCase()
-        .colorizeMessage(ArbStringColor.magenta, emoji: '✨'));
+        .colorizeMessage(PrinterStringColor.magenta, emoji: '✨'));
   }
 
   void topDivider() {

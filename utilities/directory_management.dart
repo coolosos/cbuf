@@ -36,10 +36,12 @@ mixin DirectoryManagement {
     final File outputFile = File(arbGenerated);
     var encoder = const JsonEncoder.withIndent(null);
 
-    print('Writting file'.colorizeMessage(ArbStringColor.cyan, emoji: '🚀'));
+    print(
+        'Writting file'.colorizeMessage(PrinterStringColor.cyan, emoji: '🚀'));
     outputFile.writeAsStringSync(encoder.convert(formattedArb));
 
-    print('Writting success'.colorizeMessage(ArbStringColor.green, emoji: '✅'));
+    print('Writting success'
+        .colorizeMessage(PrinterStringColor.green, emoji: '✅'));
     print('----------------------------------------');
     return outputFile;
   }
